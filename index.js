@@ -147,8 +147,14 @@ app.post('/addQuestion', (req, res)=>{
   if(USER.includes(email)){
     if(SIGNUP[email] == pwd){
       if(ADMIN.includes(email)){
-        //console.log(ADMIN)
         res.sendFile(__dirname + '/question_adder.html')
+
+
+        // Adding this post method to get questions from the Admin
+        app.post('/getQuestion', (req, res)=>{
+            console.log(req.body)
+        })
+
       }
       else res.send(`<h2>You are not an admin</h2>`)
     }

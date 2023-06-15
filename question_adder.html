@@ -7,5 +7,26 @@
 </head>
 <body>
     <h1 style="color: goldenrod; text-align: center;">Please add your questions below</h1>
+    <form action="/getQuestion" method="post">
+    <label for="Title" style="text-align: center;">Enter title</label>
+    <br>
+    <textarea name="title" id="title" cols="50" rows="2" style="background-color: greenyellow;"></textarea>
+    <br>
+    <label for="Description" style="text-align: center;">Enter Description</label>
+    <br>
+    <textarea name="des" id="des" cols="50" rows="5" style="background-color: greenyellow;"></textarea>
+    <br>
+    <label for="TestCase" style="text-align: center;"><em>Test Cases</em></label>
+    <br>
+    <label for="input" style="text-align: center;">Input</label>
+    <br>
+    <textarea name="input" id="" cols="30" rows="4" style="background-color: greenyellow;"></textarea>
+    <br>
+    <label for="output" style="text-align: center;">Output</label>
+    <br>
+    <textarea name="output" id="output" cols="50" rows="5" style="background-color: greenyellow;"></textarea>
+    <br>
+    <input type="submit" value = "Submit">
+    </form>
 </body>
 </html>
