@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1 style="text-align: center; color: orange; padding-bottom: 100px;">Leetcode Signup</h1>
+    <form action="/Signup" method="POST" style="text-align: center">
+        <label for="email" style="padding-right: 20px;">Email</label>
+        <input type="email" id = "email" name ="email" required>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" id = "pwd" name ="pwd" required>
+        <br>
+        <input type="radio" id="admin" name="admin_status" value="admin">
+        <label for="admin">Admin</label>
+        <input type="radio" id="Non-Admin" name="admin_status" value="non-admin">
+        <label for="Non-Admin">Non-Admin</label>
+        <br>
+        <input type = "submit" value="Signup">
+    </form>
+
+</body>
+</html>
