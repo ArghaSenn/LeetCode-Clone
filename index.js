@@ -140,6 +140,25 @@ app.get('/addQuestion', (req, res)=>{
   res.sendFile(__dirname + '/add_Question.html')
 })
 
+app.post('/addQuestion', (req, res)=>{
+  let email = req.body.email
+  let pwd = req.body.pwd
+
+  if(USER.includes(email)){
+    if(SIGNUP[email] == pwd){
+      if(ADMIN.includes(email)){
+        //console.log(ADMIN)
+        res.sendFile(__dirname + '/question_adder.html')
+      }
+      else res.send(`<h2>You are not an admin</h2>`)
+    }
+  }
+  else{
+    res.send("<h2>You don't have an account</h2>")
+  }
+  
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
