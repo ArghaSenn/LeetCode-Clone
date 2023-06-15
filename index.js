@@ -136,6 +136,10 @@ app.post('/submissions', (req, res)=>{
 // Create a new route, that lets admins submit a question.
 // Ensure only admins can do that.
 
+app.get('/addQuestion', (req, res)=>{
+  res.sendFile(__dirname + '/add_Question.html')
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
