@@ -2,6 +2,7 @@
 // Express and Node initialization
 const express = require('express')
 const bodyParser = require('body-parser')
+const { timeout } = require('nodemon/lib/config')
 const app = express()
 const port = 3000
 app.use(bodyParser.urlencoded({extended : true}))
@@ -152,7 +153,26 @@ app.post('/addQuestion', (req, res)=>{
 
         // Adding this post method to get questions from the Admin
         app.post('/getQuestion', (req, res)=>{
-            console.log(req.body)
+            
+            let ttle = req.body.title
+            let des = req.body.des
+            let ip =req.body.input
+            let op = req.body.output
+
+            let add_q = {
+              Title: ttle,
+              Description: des,
+
+              testCases: [{
+                input: ip.split(" "),
+                output: op
+              }]
+
+            }
+
+            QUESTION.push(add_q)
+            res.send(`<h2>Question ${ttle} added Successfully</h2>`)
+            
         })
 
       }
